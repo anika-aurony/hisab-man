@@ -1,33 +1,62 @@
-function getAmount(thing){
-    const thingText = document.getElementById(thing+'Expense');
-    const thingValue = thingText.value;
-    const thingAmount = parseFloat(thingValue);
-    return thingAmount;
+function getAmount(amount){
+    
+    const amountText = document.getElementById(amount);
+    const amountValue = amountText.value;
+    const AmountInNum = parseFloat(amountValue);
+    return AmountInNum;
+   
 }
 
+//Expense and Balance calculation
 document.getElementById('calculatorButton').addEventListener('click', function(){
-    // const foodText = document.getElementById('foodExpense');
-    // const foodValue = foodText.value;
-    // const foodAmount = parseFloat(foodValue);
-    const foodAmount = getAmount('food');
-    const rentAmount = getAmount('rent');
-    const clothAmount = getAmount('cloth');
 
-    // const rentText = document.getElementById('rentExpense');
-    // const rentValue = rentText.value;
-    // const rentAmount = parseFloat(rentValue);
+    //Get amount from the input field
+    const foodAmount = getAmount('foodExpense');
+    const rentAmount = getAmount('rentExpense');
+    const clothAmount = getAmount('clothExpense');
+    const totalIncome = getAmount('incomeAmount');
 
-    // const clothText = document.getElementById('clothExpense');
-    // const clothValue = clothText.value;
-    // const clothAmount = parseFloat(clothValue);
+    //error handling
+    if(foodAmount > 0   ){
+
+        if (rentAmount >0) {
+            if(clothAmount > 0){
+                if (totalIncome>0) {
+                            //calculation and diplay result 
+                                const totalExpenditure = foodAmount+rentAmount+clothAmount;
+                                
+
+                                const totalExpenses = document.getElementById('totalExpense');
+                                totalExpenses.innerText = totalExpenditure;
+                                
+                                const balance = totalIncome - totalExpenditure;
+
+                                const afterExpenses = document.getElementById('afterExpense');
+                                afterExpenses.innerText = balance;
+                }
+                else{
+                    console.log('Please provide valid number in total income');
+
+                }
+
+            }
+            else{
+            console.log('Please provide valid number in cloth expense');
+        }
+            
+        }
+        else{
+            console.log('Please provide valid number in rent expense');
+        }
+   
+
+        
+    
+    }
+    else{
+        console.log('Please provide valid number in food expense');
+    }
  
-    const totalExpenditure = foodAmount+rentAmount+clothAmount;
-    
-
-    const totalExpenses = document.getElementById('totalExpense');
-    totalExpenses.innerText = totalExpenditure;
-    
-
     
     
     
