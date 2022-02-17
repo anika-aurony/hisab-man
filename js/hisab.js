@@ -15,6 +15,7 @@ document.getElementById('calculatorButton').addEventListener('click', function()
     const rentAmount = getAmount('rentExpense');
     const clothAmount = getAmount('clothExpense');
     const totalIncome = getAmount('incomeAmount');
+    
 
     //error handling
     if(foodAmount > 0   ){
@@ -35,29 +36,55 @@ document.getElementById('calculatorButton').addEventListener('click', function()
                                 afterExpenses.innerText = balance;
                 }
                 else{
-                    console.log('Please provide valid number in total income');
 
+                    const error = document.getElementById('errorMessage');
+                    
+                    error.innerText = 'Please provide valid number in total income';
+                    
                 }
 
             }
             else{
-            console.log('Please provide valid number in cloth expense');
-        }
+                const error = document.getElementById('errorMessage');                   
+                error.innerText = 'Please provide valid number in cloth expense';
+            
+            }
             
         }
         else{
-            console.log('Please provide valid number in rent expense');
+            const error = document.getElementById('errorMessage');                   
+            error.innerText = 'Please provide valid number in rent expense';
         }
-   
+    }
+    else{    
+        const error = document.getElementById('errorMessage');                   
+        error.innerText = 'Please provide valid number in food expense';
+    }
+    
+})
 
-        
+document.getElementById('saveButton').addEventListener('click',function(){
+
+    // Get amount from input field
+    const parcentage = getAmount('saveParcentage');
+    const totalIncome = getAmount('incomeAmount');
+    const foodAmount = getAmount('foodExpense');
+    const rentAmount = getAmount('rentExpense');
+    const clothAmount = getAmount('clothExpense');
+
+    // Saving Calculation and Display
+    let fraction = parcentage/100;
+    let savings = totalIncome * fraction;
+
+    const saving = document.getElementById('savingAmount');
+    saving.innerText = savings;
     
-    }
-    else{
-        console.log('Please provide valid number in food expense');
-    }
- 
-    
-    
-    
+    // Remaining Balance Calculation
+    const totalExpenditure = foodAmount+rentAmount+clothAmount;
+
+    let remaining = totalIncome - savings - totalExpenditure;
+
+    const remaingAmount = document.getElementById('remainingBalance');
+    remaingAmount.innerText = remaining;
+
 })

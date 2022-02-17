@@ -29,12 +29,18 @@
                         <p>Food: <input id="foodExpense" class="inputBox p-3" type="text"></p>  
                         <p>Rent: <input id="rentExpense" class="inputBox p-3" type="text"></p>  
                         <p>Cloth: <input id="clothExpense" class="inputBox p-3" type="text"></p>  
-                        <button id="calculatorButton" class="my-2 py-2 px-4 buttonColor text-white rounded">Calculate</button>
+                        <button id="calculatorButton" class="my-2 py-2 px-4 buttonColor text-white rounded">Calculate</button><br>
+                        
+                        <!-- error message -->
+                        <span id="errorMessage" class="p-4 py-8 text-danger fw-bolder" ></span>
+
                         <h5 >Total Expenses: <span id="totalExpense"></span></h5>
                         <h5>Balance: <span id="afterExpense"></span></h5>
-                        <p>Save: <input class="inputBox p-3" type="text"> % <button class="my-3 py-2 px-4 buttonColor text-white rounded">Save</button></p>
-                        <h5>Saving Amount: <span></span></h5>
-                        <h5>Remaining Balance: <span></span></h5>
+
+                        <!-- Saving -->
+                        <p>Save: <input id="saveParcentage" class="inputBox p-3" type="text"> % <button id="saveButton" class="my-3 py-2 px-4 buttonColor text-white rounded">Save</button></p>
+                        <h5>Saving Amount: <span id="savingAmount"></span></h5>
+                        <h5>Remaining Balance: <span id="remainingBalance"></span></h5>
 
                     </div>
                   </div>
