@@ -26,11 +26,11 @@
                         <h4>Income</h4>
                         <p>Income: <input class="inputColor" type="text"></p>
                         <h4>Expenses</h4>
-                        <p>Food: <input class="inputColor" type="text"></p>  
-                        <p>Rent: <input class="inputColor" type="text"></p>  
-                        <p>Cloth: <input class="inputColor" type="text"></p>  
-                        <button class="my-3 py-2 px-4 buttonColor text-white rounded">Calculate</button>
-                        <h5>Total Expenses: <span></span></h5>
+                        <p>Food: <input id="foodExpense" class="inputColor" type="text"></p>  
+                        <p>Rent: <input id="rentExpense" class="inputColor" type="text"></p>  
+                        <p>Cloth: <input id="clothExpense" class="inputColor" type="text"></p>  
+                        <button id="calculatorButton" class="my-3 py-2 px-4 buttonColor text-white rounded">Calculate</button>
+                        <h5 >Total Expenses: <span id="totalExpense"></span></h5>
                         <h5>Balance: <span></span></h5>
                         <p>Save: <input class="inputColor" type="text"> % <button class="my-3 py-2 px-4 buttonColor text-white rounded">Save</button></p>
                         <h5>Saving Amount: <span></span></h5>
@@ -45,5 +45,7 @@
     </main>
     <!---Bootstarp js-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- DOM js -->
+    <script src="js/hisab.js"></script>
 </body>
 </html>
