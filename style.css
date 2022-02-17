@@ -1,5 +1,5 @@
 img{
-    height: 600px;
+    height: 630px;
 }
 .headingColor{
     color: mediumslateblue;
@@ -15,9 +15,9 @@ img{
     border-color: dodgerblue  ;
 }
 .inputBox{
-    background-color: rgb(236, 228, 222);
+    background-color: rgba(247, 240, 234, 0.979);
     border-width: 0ch;
-    height: 40px;
+    height: 30px;
     border-radius: 5px;
 }
 .calculatorColor{

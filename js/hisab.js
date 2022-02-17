@@ -25,15 +25,22 @@ document.getElementById('calculatorButton').addEventListener('click', function()
                 if (totalIncome>0) {
                             //calculation and diplay result 
                                 const totalExpenditure = foodAmount+rentAmount+clothAmount;
-                                
-
-                                const totalExpenses = document.getElementById('totalExpense');
-                                totalExpenses.innerText = totalExpenditure;
-                                
                                 const balance = totalIncome - totalExpenditure;
 
-                                const afterExpenses = document.getElementById('afterExpense');
-                                afterExpenses.innerText = balance;
+                                if(totalExpenditure>totalIncome){
+                                    const error = document.getElementById('errorMessage');
+                    
+                                     error.innerText = 'Your expenditure is more than your income';
+
+                                }
+                                else{
+                                    const totalExpenses = document.getElementById('totalExpense');
+                                    totalExpenses.innerText = totalExpenditure;
+                                    const afterExpenses = document.getElementById('afterExpense');
+                                    afterExpenses.innerText = balance;
+
+                                }
+                                            
                 }
                 else{
 
@@ -42,12 +49,10 @@ document.getElementById('calculatorButton').addEventListener('click', function()
                     error.innerText = 'Please provide valid number in total income';
                     
                 }
-
             }
             else{
                 const error = document.getElementById('errorMessage');                   
-                error.innerText = 'Please provide valid number in cloth expense';
-            
+                error.innerText = 'Please provide valid number in cloth expense';           
             }
             
         }
@@ -84,17 +89,17 @@ document.getElementById('saveButton').addEventListener('click',function(){
     let remaining = totalIncome - savings - totalExpenditure;
 
     // Error Handling and display
-    if (remaining > 0){
+    if (savings > remaining){
+        const error = document.getElementById('errorMessage2');                   
+        error.innerText = 'You donot have enough money!';
+    }
+    else{
+
         const saving = document.getElementById('savingAmount');
         saving.innerText = savings;
 
         const remaingAmount = document.getElementById('remainingBalance');
         remaingAmount.innerText = remaining;
-
-    }
-    else{
-        const error = document.getElementById('errorMessage2');                   
-        error.innerText = 'You donot have enough money!';
 
     }
 
