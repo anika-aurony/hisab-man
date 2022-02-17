@@ -72,19 +72,32 @@ document.getElementById('saveButton').addEventListener('click',function(){
     const rentAmount = getAmount('rentExpense');
     const clothAmount = getAmount('clothExpense');
 
-    // Saving Calculation and Display
+    // Saving Calculation
     let fraction = parcentage/100;
     let savings = totalIncome * fraction;
 
-    const saving = document.getElementById('savingAmount');
-    saving.innerText = savings;
+  
     
     // Remaining Balance Calculation
     const totalExpenditure = foodAmount+rentAmount+clothAmount;
 
     let remaining = totalIncome - savings - totalExpenditure;
 
-    const remaingAmount = document.getElementById('remainingBalance');
-    remaingAmount.innerText = remaining;
+    // Error Handling and display
+    if (remaining > 0){
+        const saving = document.getElementById('savingAmount');
+        saving.innerText = savings;
+
+        const remaingAmount = document.getElementById('remainingBalance');
+        remaingAmount.innerText = remaining;
+
+    }
+    else{
+        const error = document.getElementById('errorMessage2');                   
+        error.innerText = 'You donot have enough money!';
+
+    }
+
+ 
 
 })
