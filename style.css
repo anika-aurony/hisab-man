@@ -1,0 +1,25 @@
+img{
+    height: 600px;
+}
+.headingColor{
+    color: mediumslateblue;
+    font-size: 44px;
+}
+.mColor{
+    color: black
+
+    
+}
+.buttonColor{
+    background-color: dodgerblue;
+    border-color: dodgerblue  ;
+}
+.inputColor{
+    background-color: rgb(236, 228, 222);
+    border-width: 0ch;
+    height: 40px;
+    border-radius: 5px;
+}
+.calculatorColor{
+    background-color: snow;
+}
